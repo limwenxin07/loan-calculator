@@ -126,12 +126,16 @@
 
     <!-- Amortization Table -->
     <section class="card schedule">
-        <div class="schedule-header">
+        <div class="schedule-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
             <div>
-                <h2>Monthly Repayment Schedule</h2>
-                <p class="subtitle">
-                    Estimated breakdown of your monthly payments.
-                </p>
+                <h2>Repayment Schedule</h2>
+                <p class="subtitle" style="margin-bottom: 0;">Breakdown of payments over time.</p>
+            </div>
+            <div class="schedule-controls">
+                <select id="scheduleMode" aria-label="Schedule breakdown mode">
+                    <option value="yearly">Annual View</option>
+                    <option value="monthly">Monthly View</option>
+                </select>
             </div>
         </div>
 
@@ -139,19 +143,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Month</th>
+                        <th>Period</th>
                         <th>Payment</th>
                         <th>Principal</th>
                         <th>Interest</th>
                         <th>Balance</th>
                     </tr>
                 </thead>
-
-                <tbody id="scheduleBody">
-                    <tr>
-                        <td colspan="5">Calculate your loan to see the schedule.</td>
-                    </tr>
-                </tbody>
+                <tbody id="scheduleBody"></tbody>
             </table>
         </div>
     </section>
