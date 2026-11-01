@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div>
+            <h1>Loan Calculator</h1>
+            <p>Calculate your monthly loan repayment</p>
+        </div>
+        <div class="header-icon">💰</div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-grid">
+
+        <!-- Calculator Form -->
+        <section class="card calculator">
+            <h2>Loan Information</h2>
+            <p class="subtitle">Enter your loan details below.</p>
+
+            <div class="form-group">
+                <label for="loanAmount">Loan Amount (RM)</label>
+                <input type="number" id="loanAmount"
+                       value="100000" min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="interestRate">Annual Interest Rate (%)</label>
+                <input type="number" id="interestRate"
+                       value="4.5" min="0" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="loanYears">Loan Tenure (Years)</label>
+                <input type="number" id="loanYears"
+                       value="5" min="1" max="50">
+            </div>
+
+            <div class="button-group">
+                <button class="calculate-btn" id="calculateBtn">
+                    Calculate Loan
+                </button>
+
+                <button class="reset-btn" id="resetBtn">
+                    Reset
+                </button>
+            </div>
+
+            <p id="errorMessage" class="error"></p>
+        </section>
+
+        <!-- Results -->
+        <section class="card results">
+            <h2>Loan Summary</h2>
+            <p class="subtitle">Your estimated repayment details.</p>
+
+            <div class="monthly-box">
+                <span>Monthly Installment</span>
+                <h1 id="monthlyPayment">RM 0.00</h1>
+                <small>Estimated monthly payment</small>
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-item">
+                    <span>Loan Amount</span>
+                    <h3 id="resultLoan">RM 0.00</h3>
+                </div>
+
+                <div class="summary-item">
+                    <span>Total Interest</span>
+                    <h3 id="totalInterest">RM 0.00</h3>
+                </div>
+
+                <div class="summary-item">
+                    <span>Total Repayment</span>
+                    <h3 id="totalPayment">RM 0.00</h3>
+                </div>
+
+                <div class="summary-item">
+                    <span>Loan Duration</span>
+                    <h3 id="resultDuration">0 Years</h3>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Payment Breakdown -->
+    <section class="card breakdown">
+        <h2>Payment Breakdown</h2>
+        <p class="subtitle">Principal amount versus interest.</p>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div id="principalBar"></div>
+                <div id="interestBar"></div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div>
+                <span class="dot principal-dot"></span>
+                Principal
+                <strong id="principalPercent">0%</strong>
+            </div>
+
+            <div>
+                <span class="dot interest-dot"></span>
+                Interest
+                <strong id="interestPercent">0%</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amortization Table -->
+    <section class="card schedule">
+        <div class="schedule-header">
+            <div>
+                <h2>Monthly Repayment Schedule</h2>
+                <p class="subtitle">
+                    Estimated breakdown of your monthly payments.
+                </p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Payment</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+
+                <tbody id="scheduleBody">
+                    <tr>
+                        <td colspan="5">Calculate your loan to see the schedule.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>Loan Calculator Demo | HTML, CSS & JavaScript</p>
+        <p>For illustration purposes only. Actual bank calculations may differ.</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
